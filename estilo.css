@@ -259,14 +259,20 @@ button { font-family: inherit; cursor: pointer; }
 .review-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  gap: 28px;
 }
 .review-card {
   background: var(--paper-raised);
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.review-card:hover {
+  border-color: #C7D1DE;
+  box-shadow: 0 6px 18px rgba(11, 30, 57, 0.08);
 }
 .card-media {
   display: block;
@@ -412,7 +418,7 @@ button { font-family: inherit; cursor: pointer; }
 /* ---------- Responsive ---------- */
 @media (max-width: 880px) {
   .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-  .review-grid { grid-template-columns: repeat(2, 1fr); }
+  .review-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
   .trust-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 
@@ -420,7 +426,7 @@ button { font-family: inherit; cursor: pointer; }
   .site-nav { display: none; }
   .nav-toggle { display: flex; }
   .hero-content h1 { font-size: 1.6rem; }
-  .review-grid { grid-template-columns: 1fr; }
+  .review-grid { grid-template-columns: 1fr; gap: 18px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .header-row { height: 64px; }
   .logo-img { height: 26px; }
